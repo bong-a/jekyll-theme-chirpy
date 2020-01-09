@@ -4,14 +4,11 @@
 [![GitHub license](https://img.shields.io/github/license/cotes2020/jekyll-theme-chirpy.svg)](https://github.com/cotes2020/jekyll-theme-chirpy/blob/master/LICENSE)
 [![996.icu](https://img.shields.io/badge/link-996.icu-%23FF4D5B.svg)](https://996.icu)
 
-English | [中文](README_zh-CN.md)
+Language: English | [简体中文](docs/README_zh-CN.md)
 
-![devices-mockup](https://raw.githubusercontent.com/cotes2020/jekyll-theme-chirpy/master/assets/img/sample/devices-mockup.png)
+A minimal, portfolio, sidebar, bootstrap Jekyll theme with responsive web design and focuses on text exhibition. It will help you easily record, manage and share your knowledge and experience. 
 
-A minimal, portfolio, sidebar, bootstrap Jekyll theme with responsive web design and focuses on text exhibition. It will help you easily record, manage and share your knowledge and experience. Hope you like it! [**Live Demo** »](https://chirpy.cotes.info)
-
-
-## Features
+You will get the following features:
 
 * Auto Dark Mode
 * Posts' Last Modified Date
@@ -28,27 +25,64 @@ A minimal, portfolio, sidebar, bootstrap Jekyll theme with responsive web design
 * SEO Tag
 * Performance Optimization
 
-## Quick Start
+[**Live Demo** »](https://chirpy.cotes.info)
 
-### Preparation
+![devices-mockup](https://raw.githubusercontent.com/cotes2020/jekyll-theme-chirpy/master/assets/img/sample/devices-mockup.png)
 
-Follow the [Jekyll Docs](https://jekyllrb.com/docs/installation/) to complete the installtion of basic environment (Ruby, RubyGem, Bundler and Jekyll). In addition, to use the funny script tools, we also need to install [Python](https://www.python.org/downloads/)(version 3.5 or abover) and [ruamel.yaml](https://pypi.org/project/ruamel.yaml/).
+## Table of Contents
 
-Next, [fork](https://github.com/cotes2020/jekyll-theme-chirpy/fork) **Chirpy** and then clone your forked repo locally.
+* [Getting Started](#getting-started)
+* [Usage](#usage)
+* [Credits](#credits)
+* [Sponsor](#sponsor)
+* [Documentation](#documentation)
+* [License](#license)
 
 
-### Install Jekyll Plugins
+## Getting Started
 
-Go to the root of repo and run:
+### Prerequisites
+
+Follow the [Jekyll Docs](https://jekyllrb.com/docs/installation/) to complete the installtion of basic environment (Ruby, RubyGem, Bundler and Jekyll). In order to use the script tools to save time, we also need to install [Python](https://www.python.org/downloads/)(version 3.5 or abover) and [ruamel.yaml](https://pypi.org/project/ruamel.yaml/).
+
+In addition, if your machine is running Debian or macOS, make sure you have the [GNU coreutils](https://www.gnu.org/software/coreutils/) installed. Otherwise, get it by:
+
+* Debian
+
+```console
+$ sudo apt-get install coreutils
+```
+
+* macOS
+
+```console
+$ brew install coreutils
+```
+
+
+### Installing
+
+[Fork **Chirpy** from GitHub](https://github.com/cotes2020/jekyll-theme-chirpy/fork), then clone your forked repo to local:
+
+```console
+$ git clone git@github.com:USER/jekyll-theme-chirpy.git
+```
+
+replace the `USER` above to your GitHub username.
+
+The first time you run or build the project on your machine, perform the installation of Jekyll plugins. Go to the root of repo and run:
 
 ```terminal
 $ bundle install
 ```
 
-`bundle` will install all the dependent Jekyll Plugins listed in file `Gemfile` automatically.
+`bundle` will automatically install all the dependent Jekyll Plugins that listed in the `Gemfile`.
 
 
-### File Structure
+## Usage
+
+
+### Directory Structure
 
 The main files and related brief introductions are listed below.
 
@@ -72,6 +106,7 @@ jekyll-theme-chirpy/
 ├── README.md
 ├── _config.yml     # configuration file
 ├── tools           # script tools
+├── docs
 ├── feed.xml
 ├── index.html
 ├── robots.txt
@@ -86,27 +121,17 @@ As mentioned above, some files or directories should be removed from your repo:
 - _scripts/travis
 
 
-### Configuration
+### Customization
 
-Customize the variables in file `_config.yml` as needed.
+Basically, go to `_config.yml` and customize the variables as needed, some of them are typical options:
 
 * Avatar
     
-    The sample avatar is `/assets/img/sample/avatar.jpg`. It should be replaced by your own one. Notice that a huge image file will increase the load time of your site, so keep your avatar size as samll as possible(may be *<https://tinypng.com/>* will help).
+    `avatar` defines the source image location. The sample image is `/assets/img/sample/avatar.jpg`. It should be replaced by your own one. Notice that a huge image file will increase the load time of your site, so keep your avatar size as samll as possible(may be *<https://tinypng.com/>* will help).
 
 * TimeZone
 
     To ensure that the posts' release date matches the city you live in, please modify the field `timezone` correctly. A list of all available values can be found on [TimezoneConverter](http://www.timezoneconverter.com/cgi-bin/findzone/findzone) or [Wikipedia](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones).
-
-* Atom Feed
-
-    The Atom feed url of your site will be:
-
-    ```
-    <SITE_URL>/feed.xml
-    ```
-
-    The `SITE_URL` was defined by variable `url` of `_config.yml`.
 
 
 ###  Run Locally
@@ -117,11 +142,9 @@ You may want to preview the site before publishing, so just run the script tool:
 $ bash tools/run.sh
 ```
 
->**Note**: The *Recent Update* list requires the latest git-log date of posts, thus make sure the changes in `_posts` have been committed before running this command.
+Open a modern brower and visit at <http://localhost:4000>.
 
-Open a brower and visit <http://localhost:4000>.
-
-Few days later, you may find that the file changes does not refresh in real time by using `run.sh`. Don't worry, the advanced option `-r` (or `--realtime`) will solve this problem, but it requires [**fswatch**](http://emcrisostomo.github.io/fswatch/) to be installed on your machine.
+Few days later, you may find that the file modification(e.g. edits to a post) does not refresh in real time by using `run.sh`. Don't worry, the advanced option `-r` (or `--realtime`) will solve this problem, but it requires [**fswatch**](http://emcrisostomo.github.io/fswatch/) to be installed on your machine. Type `-h` for more information.
 
 ###  Deploying to GitHub Pages
 
@@ -142,9 +165,11 @@ By deploying the site in this way, you're allowed to push the source code direct
 
 **2**. Commit the changes of the repo first, then run the initialization script:
 
-```console
+```terminal
 $ bash tools/init.sh
 ```
+
+>**Note**: The *Recent Update* requires the posts' latest git-log date, so make sure the changes in `_posts` have been committed before running this command.
 
 it will automatically generates the *Latest Modified Date* and *Categories / Tags* page for the posts.
 
@@ -193,15 +218,40 @@ The generated static files will be placed in the root of `/path/to/local/project
 and enjoy!
 
 
-## Documentation
+## Credits
 
-For more information, please check out the [tutorial](https://chirpy.cotes.info/categories/tutorial/). In the meanwhile, a copy of the tutorial is also available on the [Wiki](https://github.com/cotes2020/jekyll-theme-chirpy/wiki).
+### Built With
+
+- [Jekyll](https://jekyllrb.com/)
+- [Bootstrap](https://getbootstrap.com/)
+- [Font Awesome](https://fontawesome.com/)
+- [jQuery](https://jquery.com/)
+- [Bootstrap TOC](https://github.com/afeld/bootstrap-toc)
+- [Simple Jekyll Search](https://github.com/christian-fei/Simple-Jekyll-Search)
+- [Lozad.js](https://apoorv.pro/lozad.js/)
+- [countUp.js](https://github.com/inorganik/countUp.js)
+- [Compress HTML](http://jch.penibelst.de/)
+- [ruamel.yaml](https://pypi.org/project/ruamel.yaml/)
+- [HTML proofer](https://github.com/gjtorikian/html-proofer)
+- [Travis CI](https://travis-ci.com/)
+- [Disqus](https://disqus.com/)
+- [Google Analytics](https://analytics.google.com/)
+
+
+### Contributors
+
+:tada:Thanks to the following developers for contributing to this project:
+
+* [Jatin Sanghvi](https://github.com/JatinSanghvi)
 
 ## Sponsor
 
-Want to buy me a coffee? Click the button <kbd>❤️Sponsor</kbd> at the top of the [Home Page](https://github.com/cotes2020/jekyll-theme-chirpy) and choose a link that suits you to donate. I'd really appreciate it and take it as encouragement to work on better projects.
+Want to buy me a coffee? Click the button <kbd>:heart:Sponsor</kbd> at the top of the [Home Page](https://github.com/cotes2020/jekyll-theme-chirpy) and choose a link that suits you to donate. I'd really appreciate it and take it as encouragement to work on better projects.
 
 
+## Documentation
+
+For more details and the better reading experience, please check out the [tutorial in Demo Site](https://chirpy.cotes.info/categories/tutorial/). In the meanwhile, a copy of the tutorial is also available on the [Wiki](https://github.com/cotes2020/jekyll-theme-chirpy/wiki).
 
 ## License
 

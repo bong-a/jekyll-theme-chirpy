@@ -4,15 +4,11 @@
 [![GitHub license](https://img.shields.io/github/license/cotes2020/jekyll-theme-chirpy.svg)](https://github.com/cotes2020/jekyll-theme-chirpy/blob/master/LICENSE)
 [![996.icu](https://img.shields.io/badge/link-996.icu-%23FF4D5B.svg)](https://996.icu)
 
-[English](README.md) | 中文
+Language: [English](../README.md) | 简体中文
 
-![devices-mockup](https://raw.githubusercontent.com/cotes2020/jekyll-theme-chirpy/master/assets/img/sample/devices-mockup.png)
+一个不一样的 Jekyll 主题，采用响应式设计，方便记录、管理、分享你的知识和经验。
 
-
-一个不一样的 Jekyll 主题，采用响应式设计，方便记录、管理、分享你的知识和经验。[**在线 Demo** »](https://chirpy.cotes.info)
-
-
-## 功能预览
+**功能一览**
 
 * 自动暗夜模式
 * 文章最后修改日期
@@ -29,13 +25,47 @@
 * SEO 优化
 * 网站性能优化
 
+[**在线 Demo** »](https://chirpy.cotes.info)
+
+![devices-mockup](https://raw.githubusercontent.com/cotes2020/jekyll-theme-chirpy/master/assets/img/sample/devices-mockup.png)
+
+## 目录
+
+* [开始](#开始)
+* [运行指南](#运行指南)
+* [感谢](#感谢)
+* [赞助](#赞助)
+* [文档](#文档)
+* [许可证书](#许可证书)
+
 ## 开始
 
 ### 准备工作
 
-按照 [Jekyll 官方文档](https://jekyllrb.com/docs/installation/) 完成基础环境的安装 (Ruby, RubyGem, Bundler 和 Jekyll)。为了使用项目内免费提供的脚本工具，你还需要安装 [Python](https://www.python.org/downloads/)( >= 3.5) 和 [ruamel.yaml](https://pypi.org/project/ruamel.yaml/).
+按照 [Jekyll 官方文档](https://jekyllrb.com/docs/installation/) 完成基础环境的安装 (Ruby，RubyGem，Bundler 和 Jekyll)。为了使用项目内免费提供的脚本工具，你还需要安装 [Python](https://www.python.org/downloads/)( >= 3.5) 和 [ruamel.yaml](https://pypi.org/project/ruamel.yaml/)。
 
-接着，[fork](https://github.com/cotes2020/jekyll-theme-chirpy/fork) 一份代码，然后克隆你的 Fork 版到本地机器上。
+如果你的机器系统是 Debian 或者 macOS，则需要确保安装了 [GNU coreutils](https://www.gnu.org/software/coreutils/)。否则，通过以下方式获得：
+
+* Debian
+
+ ```console
+ $ sudo apt-get install coreutils
+ ```
+
+* macOS
+
+ ```console
+ $ brew install coreutils
+ ```
+
+接着，[fork](https://github.com/cotes2020/jekyll-theme-chirpy/fork) 一份代码，然后克隆你 Fork 的仓库到本地机器上。
+
+```console
+$ git clone git@github.com:USER/jekyll-theme-chirpy.git
+```
+
+`USER` 替换为你的 GitHub username。
+
 
 
 ### 安装 Jekyll 插件
@@ -47,6 +77,9 @@ $ bundle install
 ```
 `bundle` 命令会自动安装 `Gemfile` 内声明的依赖插件.
 
+
+
+## 运行指南
 
 ### 文件目录
 
@@ -72,6 +105,7 @@ jekyll-theme-chirpy/
 ├── README.md
 ├── _config.yml     # configuration file
 ├── tools           # script tools
+├── docs
 ├── feed.xml
 ├── index.html
 ├── robots.txt
@@ -98,16 +132,6 @@ jekyll-theme-chirpy/
 
     时区由 `timezone` 定义，默认为 `亚洲/上海`，如果肉身翻墙要换城市可在此列表找到： [TimezoneConverter](http://www.timezoneconverter.com/cgi-bin/findzone/findzone) 或者 [Wikipedia](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones).
 
-* Atom 订阅
-
-    Atom 订阅路径是:
-
-    ```
-    <SITE_URL>/feed.xml
-    ```
-
-    `SITE_URL` 由变量 `url` 定义。
-
 
 ###  本地运行
 
@@ -116,8 +140,6 @@ jekyll-theme-chirpy/
 ```terminal
 $ bash tools/run.sh
 ```
-
->**注**: *最后更新* 列表根据文章的 git 修改记录生成, 所以运行前先把 `_posts` 目录的修改提交.
 
 访问本地服务： <http://localhost:4000>
 
@@ -138,13 +160,15 @@ $ bash tools/run.sh
 |站点类型 | 仓库名称|
 |:---|:---|
 |User or Organization | `<username>.github.io`|
-|Project| `<username>.github.io` 以外的名字, 譬如 `project`|
+|Project| `<username>.github.io` 以外的名字，譬如 `project`|
 
-**2**. 提交本地更改, 然后运行:
+**2**. 提交本地更改，然后运行:
 
 ```console
 $ bash tools/init.sh
 ```
+
+>**注**: *最后更新* 列表根据文章的 git 修改记录生成，所以运行前先把 `_posts` 目录的修改提交。
 
 它会自动生成文章的 *最后修改日期* 和 *分类 / 标签* 页面.
 
@@ -162,7 +186,7 @@ $ bash tools/init.sh
 
 由于安全原因，GitHub Pages 不允许第三方插件运行，如果你想突破规则，就要本地构建站点内容。
 
-**1**. 到 GitHub 网页, 创建一个新的仓库，根据以下规则命名: 
+**1**. 到 GitHub 网页，创建一个新的仓库，根据以下规则命名: 
 
 |站点类型 | 仓库名称|
 |:---|:---|
@@ -178,7 +202,7 @@ $ bash tools/build.sh -d /path/to/local/project/
 ```
 > `project` 为新仓库名称。
 
-如果你想使用 Project 网站, 修改配置文件的 `baseurl` 为项目名称, 以斜杠开头，如：`/project`。或者，在上述命令行后面加参数`-b /project`，`project` 替换为新仓库名称。
+如果你想使用 Project 网站，修改配置文件的 `baseurl` 为项目名称，以斜杠开头，如：`/project`。或者，在上述命令行后面加参数`-b /project`，`project` 替换为新仓库名称。
 
 生成的静态文件将会在 `/path/to/local/project`. 把新仓库的修改提交并推送到远端 `master` 分支.
 
@@ -191,16 +215,40 @@ $ bash tools/build.sh -d /path/to/local/project/
 |User or Organization | `https://<username>.github.io/`|
 |Project| `https://<username>.github.io/project/`|
 
+## 感谢
 
-## 文档
+### 构建使用的平台或插件
 
-更多细节及更佳的阅读体验, 请参阅 [线上教程](https://chirpy.cotes.info/categories/tutorial/)。 与此同时, [Wiki](https://github.com/cotes2020/jekyll-theme-chirpy/wiki) 也有一份教程的拷贝.
+- [Jekyll](https://jekyllrb.com/)
+- [Bootstrap](https://getbootstrap.com/)
+- [Font Awesome](https://fontawesome.com/)
+- [jQuery](https://jquery.com/)
+- [Bootstrap TOC](https://github.com/afeld/bootstrap-toc)
+- [Simple Jekyll Search](https://github.com/christian-fei/Simple-Jekyll-Search)
+- [Lozad.js](https://apoorv.pro/lozad.js/)
+- [countUp.js](https://github.com/inorganik/countUp.js)
+- [Compress HTML](http://jch.penibelst.de/)
+- [ruamel.yaml](https://pypi.org/project/ruamel.yaml/)
+- [HTML proofer](https://github.com/gjtorikian/html-proofer)
+- [Travis CI](https://travis-ci.com/)
+- [Disqus](https://disqus.com/)
+- [Google Analytics](https://analytics.google.com/)
 
+
+### 代码贡献者列表
+
+:tada:感谢以下开发者百忙中抽空为本项目作出贡献:
+
+* [Jatin Sanghvi](https://github.com/JatinSanghvi)
 
 ## 赞助
 
-想要打赏作者吗？在 [项目主页](https://github.com/cotes2020/jekyll-theme-chirpy) 点击按钮 <kbd>❤️Sponsor</kbd> 选择 *支付宝、微信* 链接 <https://cotes.gitee.io/alipay-wechat-donation> 即可完成，您的打赏将会鼓励作者去更好地完成开源项目！
+想要打赏作者吗？在 [项目主页](https://github.com/cotes2020/jekyll-theme-chirpy) 点击按钮 <kbd>:heart:Sponsor</kbd> 选择 *支付宝、微信* 链接: <https://cotes.gitee.io/alipay-wechat-donation> 即可完成，您的打赏将会鼓励作者去更好地完成开源项目！
 
-## License 许可
+## 文档
+
+更多细节及更佳的阅读体验，请参阅 [线上教程](https://chirpy.cotes.info/categories/tutorial/)。 与此同时，[Wiki](https://github.com/cotes2020/jekyll-theme-chirpy/wiki) 也有一份教程的拷贝。
+
+## 许可证书
 
 本项目开源，基于 [MIT](https://github.com/cotes2020/jekyll-theme-chirpy/blob/master/LICENSE) 许可。
